@@ -1,11 +1,11 @@
 {
-  nodes(filter: {
-    and: [
-      {schema: {is: content}},
-      {name: {regex: "^Tree:"}}
-    ]
-  }) {
-    uuid
-    name
-  }
+    nodes(filter: {
+        and: [
+            {schema: {is: content}},
+            {name: {regex: "^Tree:"}}
+        ]
+    }) {
+        uuid
+        name
+    }
 }

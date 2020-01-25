@@ -1,24 +1,22 @@
 package com.gentics.graphqlfilter;
 
-import org.junit.Assert;
-import org.junit.Test;
-
 import com.gentics.graphqlfilter.util.QueryFile;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.assertEquals;
 
 public class BooleanFilterTest extends AbstractFilterTest {
-	@Test
-	public void testBoolean() {
-		List<Map<String, ?>> result = queryNodesAsList(new QueryFile("boolean", "published"));
+    @Test
+    public void testBoolean() {
+        List<Map<String, ?>> result = queryNodesAsList(new QueryFile("boolean", "published"));
 
-		assertEquals(3, result.size());
+        Assertions.assertThat(result.size()).isEqualTo(3);
 
-		result.stream()
-			.map(node -> (Boolean) node.get("published"))
-			.forEach(Assert::assertTrue);
-	}
+        result.stream()
+                .map(node -> (Boolean) node.get("published"))
+                .forEach(aBoolean -> Assertions.assertThat(aBoolean).isTrue());
+    }
 }

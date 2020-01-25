@@ -1,8 +1,8 @@
 {
-  nodes(filter: {
-    published: true
-  }) {
-    name
-    published
-  }
+    nodes(filter: {
+        published: true
+    }) {
+        name
+        published
+    }
 }

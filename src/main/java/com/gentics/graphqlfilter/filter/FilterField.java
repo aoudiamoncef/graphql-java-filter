@@ -13,71 +13,65 @@ import static graphql.schema.GraphQLInputObjectField.newInputObjectField;
  * A filter that can be used inside other nested filters, such as the {@link MainFilter}
  */
 public interface FilterField<T, Q> extends Filter<T, Q> {
-	/**
-	 * The name of the field in the GraphQLInputObject
-	 */
-	String getName();
+    /**
+     * A filter that tests if a value is null.
+     */
+    static <T> FilterField<T, Boolean> isNull() {
+        return create("isNull", "Tests if the value is null", GraphQLBoolean, query -> value -> query == (value == null));
+    }
 
-	/**
-	 * The description of the field in the GraphQLInputObject
-	 */
-	String getDescription();
+    /**
+     * A helper method to easily create a FilterField.
+     *
+     * @param name            name of the filter
+     * @param description     description of the filter
+     * @param type            GraphQl type of the filter
+     * @param createPredicate a function that creates a predicate based on the filter the user defined
+     * @param <T>             The predicate input type
+     * @param <Q>             The Java type mapped from the GraphQL input type
+     */
+    static <T, Q> FilterField<T, Q> create(String name, String description, GraphQLInputType type, Function<Q, Predicate<T>> createPredicate) {
+        return new FilterField<T, Q>() {
+            @Override
+            public String getName() {
+                return name;
+            }
 
-	/**
-	 * Creates the field which is used to construct the GraphQL input type.
-	 */
-	default GraphQLInputObjectField toObjectField() {
-		return newInputObjectField()
-			.name(getName())
-			.description(getDescription())
-			.type(getType())
-			.build();
-	}
+            @Override
+            public String getDescription() {
+                return description;
+            }
 
-	/**
-	 * A filter that tests if a value is null.
-	 */
-	static <T> FilterField<T, Boolean> isNull() {
-		return create("isNull", "Tests if the value is null", GraphQLBoolean, query -> value -> query == (value == null));
-	}
+            @Override
+            public Predicate<T> createPredicate(Q query) {
+                return createPredicate.apply(query);
+            }
 
-	/**
-	 * A helper method to easily create a FilterField.
-	 *
-	 * @param name
-	 *            name of the filter
-	 * @param description
-	 *            description of the filter
-	 * @param type
-	 *            GraphQl type of the filter
-	 * @param createPredicate
-	 *            a function that creates a predicate based on the filter the user defined
-	 * @param <T>
-	 *            The predicate input type
-	 * @param <Q>
-	 *            The Java type mapped from the GraphQL input type
-	 */
-	static <T, Q> FilterField<T, Q> create(String name, String description, GraphQLInputType type, Function<Q, Predicate<T>> createPredicate) {
-		return new FilterField<T, Q>() {
-			@Override
-			public String getName() {
-				return name;
-			}
+            @Override
+            public GraphQLInputType getType() {
+                return type;
+            }
+        };
+    }
 
-			@Override
-			public String getDescription() {
-				return description;
-			}
+    /**
+     * Creates the field which is used to construct the GraphQL input type.
+     */
+    default GraphQLInputObjectField toObjectField() {
+        return newInputObjectField()
+                .name(getName())
+                .description(getDescription())
+                .type(getType())
+                .build();
+    }
 
-			@Override
-			public Predicate<T> createPredicate(Q query) {
-				return createPredicate.apply(query);
-			}
+    /**
+     * The name of the field in the GraphQLInputObject
+     */
+    String getName();
 
-			@Override
-			public GraphQLInputType getType() {
-				return type;
-			}
-		};
-	}
+    /**
+     * The description of the field in the GraphQLInputObject
+     */
+    String getDescription();
 }

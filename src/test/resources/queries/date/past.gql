@@ -1,7 +1,7 @@
 {
-  nodes(filter: {
-    created: {isPast: true}
-  }) {
-    name
-  }
+    nodes(filter: {
+        created: {isPast: true}
+    }) {
+        name
+    }
 }

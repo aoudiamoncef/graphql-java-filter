@@ -1,7 +1,7 @@
 {
-  nodes(filter: {
-    language: {equals: "de"}
-  }) {
-    uuid
-  }
+    nodes(filter: {
+        language: {equals: "de"}
+    }) {
+        uuid
+    }
 }

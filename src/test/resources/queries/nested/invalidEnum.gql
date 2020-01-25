@@ -1,7 +1,7 @@
 {
-  nodes(filter: {
-    schema: {is: bogus}
-  }) {
-    uuid
-  }
+    nodes(filter: {
+        schema: {is: bogus}
+    }) {
+        uuid
+    }
 }

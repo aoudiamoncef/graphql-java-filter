@@ -1,85 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.gentics.graphqlfilter</groupId>
-	<artifactId>graphql-java-filter</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+    <groupId>com.gentics.graphqlfilter</groupId>
+    <artifactId>graphql-java-filter</artifactId>
+    <version>1.0.2-SNAPSHOT</version>
 
-	<parent>
-		<groupId>com.gentics</groupId>
-		<artifactId>maven-parent</artifactId>
-		<version>2.0.16</version>
-	</parent>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <graphql-java.version>13.0</graphql-java.version>
+        <commons-io.version>2.6</commons-io.version>
+        <junit-jupiter-engine.version>5.5.2</junit-jupiter-engine.version>
+        <assertj-core.version>3.14.0</assertj-core.version>
+        <slf4j-api.version>1.7.5</slf4j-api.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+    </properties>
 
+    <developers>
+        <developer>
+            <name>Philipp Gürtler</name>
+            <url>https://github.com/philippguertler</url>
+            <organization>Gentics Software</organization>
+            <roles>
+                <role>Core Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>Johannes Schüth</name>
+            <url>https://github.com/Jotschi</url>
+            <email>git@jotschi.de</email>
+            <organization>Gentics Software</organization>
+            <roles>
+                <role>Core Developer</role>
+            </roles>
+        </developer>
 
-	<developers>
-		<developer>
-			<name>Philipp Gürtler</name>
-			<url>https://github.com/philippguertler</url>
-			<organization>Gentics Software</organization>
-			<roles>
-				<role>Core Developer</role>
-			</roles>
-		</developer>
-		<developer>
-			<name>Johannes Schüth</name>
-			<url>https://github.com/Jotschi</url>
-			<email>git@jotschi.de</email>
-			<organization>Gentics Software</organization>
-			<roles>
-				<role>Core Developer</role>
-			</roles>
-		</developer>
-	
-	</developers>
+    </developers>
 
-	<organization>
-		<name>Gentics Software</name>
-		<url>http://www.gentics.com</url>
-	</organization>
+    <organization>
+        <name>Gentics Software</name>
+        <url>http://www.gentics.com</url>
+    </organization>
 
-	<licenses>
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-	<inceptionYear>2018</inceptionYear>
+    <inceptionYear>2018</inceptionYear>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.graphql-java</groupId>
-			<artifactId>graphql-java</artifactId>
-			<version>7.0</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.6</version>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java</artifactId>
+            <version>${graphql-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
 
-		<!-- Test dependencies -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter-engine.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.6.6</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

@@ -1,7 +1,7 @@
 {
-  nodes(filter: {
-    created: {before: "2018-03-02"}
-  }) {
-    name
-  }
+    nodes(filter: {
+        created: {before: "2018-03-02"}
+    }) {
+        name
+    }
 }

@@ -1,7 +1,7 @@
 {
-  nodes(filter: {
-    schema: {is: content}
-  }) {
-    uuid
-  }
+    nodes(filter: {
+        schema: {is: content}
+    }) {
+        uuid
+    }
 }

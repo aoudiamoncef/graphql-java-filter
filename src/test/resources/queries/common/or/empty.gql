@@ -1,7 +1,7 @@
 {
-  nodes(filter: {
-    or: []
-  }) {
-    uuid
-  }
+    nodes(filter: {
+        or: []
+    }) {
+        uuid
+    }
 }
