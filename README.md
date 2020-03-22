@@ -1,4 +1,5 @@
 # GraphQL Filter
+
 Enhance your GraphQL API with filters.
 
 Use this library to let the user filter through the results of a GraphQL query.

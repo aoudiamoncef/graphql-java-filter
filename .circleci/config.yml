@@ -1,0 +1,71 @@
+version: 2
+general:
+  branches:
+    only:
+      - master
+      - develop
+      - /feature/.*/
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/graphql-java-filter
+    environment:
+      MAVEN_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pom.xml" }}
+            - v1-dependencies-
+      - run: |
+          mvn dependency:resolve-plugins
+          mvn dependency:go-offline || true
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+      - run: mvn clean test
+
+  deploy:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    working_directory: ~/graphql-java-filter
+    environment:
+      MAVEN_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pom.xml" }}
+            - v1-dependencies-
+      - run: |
+          mvn dependency:resolve-plugins
+          mvn dependency:go-offline || true
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+      - run:
+          name: Deploy the artifacts
+          command: |
+            mvn -s ./.circleci/.circleci.settings.xml -DskipTests deploy -P bintray
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - build
+          filters:
+            # only act on version tags
+            tags:
+              only: /^v\d+\.\d+\.\d+$/
+            # ignore any commit on any branch by default
+            branches:
+              ignore: /.*/
