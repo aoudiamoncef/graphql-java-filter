@@ -1,5 +1,7 @@
 # GraphQL Filter
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7738314fd7d74e48b3440d0934b3e79e)](https://app.codacy.com/manual/Sparow199/graphql-java-filter?utm_source=github.com&utm_medium=referral&utm_content=aoudiamoncef/graphql-java-filter&utm_campaign=Badge_Grade_Dashboard)
+
 Enhance your GraphQL API with filters.
 
 Use this library to let the user filter through the results of a GraphQL query.
