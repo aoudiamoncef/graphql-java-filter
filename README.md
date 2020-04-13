@@ -1,8 +1,27 @@
 # GraphQL Filter
 
+[![CircleCI](https://circleci.com/gh/aoudiamoncef/graphql-java-filter.svg?style=svg)](https://circleci.com/gh/aoudiamoncef/graphql-java-filter)
+[![Download](https://api.bintray.com/packages/sparow199/maven/graphql-java-filter/images/download.svg) ](https://bintray.com/sparow199/maven/graphql-java-filter/_latestVersion)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2f8ef13df5414d73a36bbbdcf7ffe312)](https://www.codacy.com/manual/Sparow199/graphql-java-filter?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=aoudiamoncef/graphql-java-filter&amp;utm_campaign=Badge_Grade)
+[![Known Vulnerabilities](https://snyk.io/test/github/aoudiamoncef/graphql-java-filter/badge.svg?targetFile=pom.xml)](https://snyk.io/test/github/aoudiamoncef/graphql-java-filter?targetFile=pom.xml)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Faoudiamoncef%2Fgraphql-java-filter.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Faoudiamoncef%2Fgraphql-java-filter?ref=badge_shield)
+[![License](https://img.shields.io/github/license/aoudiamoncef/graphql-java-filter?color=yellow)](https://opensource.org/licenses/Apache-2.0)
+
 Enhance your GraphQL API with filters.
 
 Use this library to let the user filter through the results of a GraphQL query.
+
+### Getting Started
+
+1. Add Graphql Java filter to your project's dependencies:
+
+```xml
+   <dependency>
+       <groupId>com.github.aoudiamoncef</groupId>
+       <artifactId>graphql-java-filter</artifactId>
+       <version>1.1.1</version>
+   </dependency>
+```
 
 ## Live Demo
 [Here is an implementation of this library.](https://demo.getmesh.io/api/v1/demo/graphql/browser)

@@ -5,7 +5,12 @@
 
     <groupId>com.github.aoudiamoncef</groupId>
     <artifactId>graphql-java-filter</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
+    <packaging>jar</packaging>
+
+    <name>GraphQL Filter</name>
+    <description>Library to let the user filter through the results of a GraphQL query</description>
+    <url>https://github.com/aoudiamoncef/graphql-java-filter</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -156,11 +161,4 @@
             <url>https://api.bintray.com/maven/sparow199/maven/graphql-java-filter/;publish=1</url>
         </repository>
     </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com/</url>
-        </repository>
-    </repositories>
 </project>
