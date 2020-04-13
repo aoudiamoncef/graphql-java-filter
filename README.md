@@ -1,4 +1,6 @@
 # GraphQL Filter
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faoudiamoncef%2Fgraphql-java-filter.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faoudiamoncef%2Fgraphql-java-filter?ref=badge_shield)
+
 
 Enhance your GraphQL API with filters.
 
@@ -58,3 +60,6 @@ The following filters can be used to filter primitive types: `BooleanFilter`, `D
 
 ## Examples
 See [NodeFilter.java](src/test/java/com/gentics/graphqlfilter/filter/NodeFilter.java)  as an example filter implementation.
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faoudiamoncef%2Fgraphql-java-filter.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Faoudiamoncef%2Fgraphql-java-filter?ref=badge_large)
