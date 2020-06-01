@@ -77,3 +77,13 @@ workflows:
             # ignore any commit on any branch by default
             branches:
               ignore: /.*/
+      - sync:
+          requires:
+            - deploy
+          filters:
+            # only act on version tags
+            tags:
+              only: /^v\d+\.\d+\.\d+$/
+            # ignore any commit on any branch by default
+            branches:
+              ignore: /.*/
