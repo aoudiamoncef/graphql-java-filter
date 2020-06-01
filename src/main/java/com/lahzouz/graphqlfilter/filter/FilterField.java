@@ -56,6 +56,8 @@ public interface FilterField<T, Q> extends Filter<T, Q> {
 
     /**
      * Creates the field which is used to construct the GraphQL input type.
+     *
+     * @return GraphQLInputObjectField.
      */
     default GraphQLInputObjectField toObjectField() {
         return newInputObjectField()
@@ -67,11 +69,15 @@ public interface FilterField<T, Q> extends Filter<T, Q> {
 
     /**
      * The name of the field in the GraphQLInputObject
+     *
+     * @return String.
      */
     String getName();
 
     /**
      * The description of the field in the GraphQLInputObject
+     *
+     * @return String.
      */
     String getDescription();
 }

@@ -31,6 +31,8 @@ public class DateFilter extends MainFilter<Long> {
 
 	/**
 	 * Filters ISO-8601 strings by various means
+	 *
+	 * @return DateFilter.
 	 */
 	public static synchronized DateFilter filter() {
 		if (instance == null) {

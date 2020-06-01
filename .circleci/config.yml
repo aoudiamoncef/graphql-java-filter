@@ -50,6 +50,14 @@ jobs:
           name: Deploy the artifacts
           command: |
             mvn -s ./.circleci/.circleci.settings.xml -DskipTests deploy -P bintray
+  sync:
+    docker:
+      - image: byrnedo/alpine-curl:0.1.8
+    steps:
+      - run:
+          name: Sync version Artifacts to Maven Central
+          command: |
+            curl -d '{"username": "${SONATYPE_USER_TOKEN}", "password": "${SONATYPE_PASSWORD}"}' -H "Content-Type: application/json" -X POST https://bintray.com/maven_central_sync/sparow199/maven/graphql-java-filter/1.2.0
 
 workflows:
   version: 2

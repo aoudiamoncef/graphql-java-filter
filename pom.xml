@@ -5,7 +5,7 @@
 
     <groupId>com.github.aoudiamoncef</groupId>
     <artifactId>graphql-java-filter</artifactId>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>GraphQL Filter</name>
@@ -15,15 +15,16 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <assertj-core.version>3.15.0</assertj-core.version>
-        <commons-io.version>2.6</commons-io.version>
-        <graphql-java.version>14.0</graphql-java.version>
-        <junit-jupiter-engine.version>5.6.1</junit-jupiter-engine.version>
+        <assertj-core.version>3.16.1</assertj-core.version>
+        <commons-io.version>2.7</commons-io.version>
+        <graphql-java.version>15.0</graphql-java.version>
+        <junit-jupiter-engine.version>5.6.2</junit-jupiter-engine.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+        <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <slf4j-api.version>1.7.30</slf4j-api.version>
-        <slf4j-simple.version>1.6.6</slf4j-simple.version>
+        <slf4j-simple.version>1.7.30</slf4j-simple.version>
     </properties>
 
     <scm>
@@ -51,7 +52,6 @@
                 <role>Core Developer</role>
             </roles>
         </developer>
-
     </developers>
 
     <organization>
@@ -126,6 +126,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -136,6 +137,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>

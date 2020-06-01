@@ -41,6 +41,8 @@ public class NumberFilter extends MainFilter<BigDecimal> {
 
     /**
      * Get the singleton string filter
+     *
+     * @return NumberFilter.
      */
     public static synchronized NumberFilter filter() {
         if (instance == null) {

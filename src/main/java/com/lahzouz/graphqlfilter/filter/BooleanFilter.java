@@ -10,7 +10,9 @@ public class BooleanFilter implements Filter<Boolean, Boolean> {
     private static BooleanFilter instance;
 
     /**
-     * Get the singleton boolean filter
+     * Get the singleton boolean
+     *
+     * @return BooleanFilter.
      */
     public static synchronized BooleanFilter filter() {
         if (instance == null) {

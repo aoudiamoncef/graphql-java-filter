@@ -22,6 +22,8 @@ public class StringFilter extends MainFilter<String> {
 
     /**
      * Get the singleton string filter
+     *
+     * @return StringFilter.
      */
     public static synchronized StringFilter filter() {
         if (instance == null) {

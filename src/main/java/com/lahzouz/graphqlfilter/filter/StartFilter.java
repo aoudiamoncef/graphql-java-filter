@@ -10,6 +10,8 @@ import graphql.schema.GraphQLArgument;
 public interface StartFilter<T, Q> extends Filter<T, Q> {
     /**
      * Creates the filter argument for GraphQL
+     *
+     * @return GraphQLArgument.
      */
     default GraphQLArgument createFilterArgument() {
         return GraphQLArgument.newArgument()

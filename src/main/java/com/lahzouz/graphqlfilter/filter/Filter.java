@@ -17,6 +17,8 @@ public interface Filter<T, Q> {
 
     /**
      * The type of this filter to be used in GraphQl. This describes the options the user can choose to refine the filter.
+     *
+     * @return GraphQLInputType.
      */
     GraphQLInputType getType();
 

@@ -19,7 +19,7 @@ Use this library to let the user filter through the results of a GraphQL query.
    <dependency>
        <groupId>com.github.aoudiamoncef</groupId>
        <artifactId>graphql-java-filter</artifactId>
-       <version>1.1.1</version>
+       <version>1.2.0</version>
    </dependency>
 ```
 
