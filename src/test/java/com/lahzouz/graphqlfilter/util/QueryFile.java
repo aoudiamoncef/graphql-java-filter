@@ -18,7 +18,7 @@ public class QueryFile {
     }
 
     public String getQuery() {
-        path[path.length - 1] = path[path.length - 1] + ".gql";
+        path[path.length - 1] = path[path.length - 1] + ".graphql";
         String path = Paths.get("/", flatten(
                 new String[]{"queries"},
                 this.path)).toString();

@@ -5,7 +5,7 @@
 
     <groupId>com.github.aoudiamoncef</groupId>
     <artifactId>graphql-java-filter</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>GraphQL Filter</name>
@@ -15,10 +15,10 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
-        <assertj-core.version>3.16.1</assertj-core.version>
-        <commons-io.version>2.7</commons-io.version>
+        <assertj-core.version>3.17.0</assertj-core.version>
+        <commons-io.version>2.8.0</commons-io.version>
         <graphql-java.version>15.0</graphql-java.version>
-        <junit-jupiter-engine.version>5.6.2</junit-jupiter-engine.version>
+        <junit-jupiter-engine.version>5.7.0</junit-jupiter-engine.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
@@ -33,41 +33,6 @@
         <url>https://github.com/aoudiamoncef/graphql-java-filter</url>
         <tag>HEAD</tag>
     </scm>
-
-    <developers>
-        <developer>
-            <name>Philipp Gürtler</name>
-            <url>https://github.com/philippguertler</url>
-            <organization>Gentics Software</organization>
-            <roles>
-                <role>Core Developer</role>
-            </roles>
-        </developer>
-        <developer>
-            <name>Johannes Schüth</name>
-            <url>https://github.com/Jotschi</url>
-            <email>git@jotschi.de</email>
-            <organization>Gentics Software</organization>
-            <roles>
-                <role>Core Developer</role>
-            </roles>
-        </developer>
-    </developers>
-
-    <organization>
-        <name>Gentics Software</name>
-        <url>http://www.gentics.com</url>
-    </organization>
-
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <inceptionYear>2018</inceptionYear>
 
     <dependencies>
         <dependency>

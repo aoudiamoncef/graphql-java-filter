@@ -10,7 +10,7 @@ As a contributor, here are the guidelines we would like you to follow:
 	 - [Commit body](#body)
 	 - [Commit footer](#footer)
 - [WorkFlow](#branch)
-	 - [GitFlow](#gitflow)
+	 - [GithubFlow](#githubflow)
 
 
 ## <a name="commit"></a> Commit Message Guidelines
@@ -64,14 +64,15 @@ The body should include the motivation for the change and contrast this with pre
 The footer should contain any information about **Breaking Changes** and is also the place to
 reference GitHub issues that this commit **Closes**.
 
-**Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
+**Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit
+message is then used for this.
 
 ## <a name="workflow"></a>WorkFlow
 
-### <a name="gitflow"></a> GitFlow
+### <a name="githubflow"></a> GithubFlow
 
-We adopt towards to [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/) which is a Git workflow design that was first published and made popular by Vincent Driessen at nvie.
-
-Cheatsheet [GitFlow](https://danielkummer.github.io/git-flow-cheatsheet/)
+We adopt towards to [GithubFlow](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/github-flow)
+which is GitHub flow is a lightweight, branch-based workflow that supports teams and projects where deployments are made regularly.
+This guide explains how and why GitHub flow works.
 
 Create a new pull request on github (only if github don't find any conflict).
